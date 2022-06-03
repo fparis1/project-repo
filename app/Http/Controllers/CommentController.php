@@ -19,7 +19,7 @@ class CommentController extends Controller
     {
         $users = User::all();
         $comments = Comment::all();
-        return view('comments.show',compact('comment', 'users', 'comments'))
+        return view('comments.index',compact('comment', 'users', 'comments'))
                  ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -38,7 +38,7 @@ class CommentController extends Controller
         ]);
       
         Comment::create($request->all());
-        return view('comments');
+        return redirect()->route('products.index');
         
     }
 
@@ -53,4 +53,16 @@ class CommentController extends Controller
         return view('comments.edit',compact('comment'));
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Comment  $product
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Comment $comment)
+    {
+        $comment->delete();
+       
+       return redirect()->back();
+    }
 }

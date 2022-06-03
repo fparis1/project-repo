@@ -46,14 +46,16 @@
             <th>Komentar</th>
             <th>Radnje</th>
         </tr>
+        <?php $counter = 0; ?>
       @foreach($comments as $com)
       @if ($com->name == $comment->name)
+      <?php $counter += 1; ?>
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $com->person }}</td>
             <td>{{ $com->comment }}</td>
             <td>
-            <form action="{{ route('comments.destroy',$comment->id) }}" method="POST">
+            <form action="{{ route('comments.destroy',$com->id) }}" method="POST">
 
                     @csrf
                     @method('DELETE')
@@ -65,6 +67,9 @@
         @endif
     @endforeach   
     </table>
+    <?php if ($counter == 0) {
+        echo 'Trenutno nema nikakvih komentara';
+    } ?>
     
                 </div>
             </div>

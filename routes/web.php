@@ -35,3 +35,5 @@ Route::resource('buyers', BuyerController::class);
 Route::resource('cards', CardController::class);
 
 Route::resource('comments', CommentController::class);
+
+Route::get('send',[HomeController::class,"sendnotification"]);

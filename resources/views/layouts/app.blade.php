@@ -27,9 +27,19 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+               <?php if(Auth::check()): ?>
+                <a class="navbar-brand" href="{{ url('/home') }}">
                   Početna stranica
                 </a>
+                <a class="navbar-brand" href="{{ url('/products') }}">
+                  Svi ticketi
+                </a>
+                <?php if(Auth::user()->type == 'agent'): ?>
+                    <a class="navbar-brand" href="{{ url('/customers') }}">
+                  Svi korisnici
+                </a>
+                <?php endif; ?>
+                <?php endif; ?>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

@@ -18,18 +18,7 @@
                     <strong><?php echo Auth::user()->name; ?></strong>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-body">
-                    <form action="./products" method="get">
-                    <button type="submit" class="btn">Svi ticketi</button>
-                    </form>
-                    @if (Auth::user()->type == 'agent')
-                    <form action="./customers" method="get">
-                    <button type="submit" class="btn">Svi korisnici</button>
-                    </form>
-                    @endif
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>

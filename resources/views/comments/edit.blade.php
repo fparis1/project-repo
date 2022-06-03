@@ -12,7 +12,7 @@
                   </div>
                   <div class="card">
                         <div class="card-body">
-                        <a href="./../2" class="poveznica2">Povratak</a>
+                        <a href="./../../products" class="poveznica2">Povratak</a>
                         </div>
                   </div>
                   <div class="card">
@@ -38,7 +38,6 @@
 
                    </div>
                   <div>
-                        <label>Ime i prezime</label>
                         <input type="text" name="person" value="<?php echo Auth::user()->name;?>" readonly>    
                   </div>
                   <div>

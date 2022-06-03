@@ -6,6 +6,9 @@ use App\Models\Product;
 use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Message;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MessageCreated;
   
 class ProductController extends Controller
 {
@@ -99,9 +102,20 @@ class ProductController extends Controller
             'tech' => 'required',
             
         ]);
-      
         $product->update($request->all());
-      
+        /*$customers = Customer::all();
+        foreach ($customers as $cus) {
+            if($cus->id == $product->person) {
+                $email = $cus->email;
+            }
+        }
+        $message = $request->all();
+        Mail::to($email)->queue(new MessageCreated($message));
+        Mail::raw("name: $message->name \n message: $message->description", function($message) {
+            $message->to("$email")
+            ->subject('New contact form is submitted.');
+       });*/
+
         return redirect()->route('products.index')
                         ->with('success','Uspješno ažuriran ticket.');
     }

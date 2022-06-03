@@ -13,37 +13,31 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                   
-                    <form method="get" action="./home">
-                                <input type="submit" value="Nazad">
-                    </form>
-                </div>
-            </div>
+                    
             <?php if(Auth::user()->type == 'agent'): ?>
-            <div class="card">
-                <div class="card-body">
                     
                     <a href="{{ route('products.create') }}" class="poveznica2">Novi ticket</a>
-                </div>
-            </div>
+                
             <?php endif; ?>
-            <div class="card">
-                <div class="card-body">
+            </div>
+            </div>
+            
                 @if ($message = Session::get('success'))
+                <div class="card">
+                <div class="card-body">
                 <div class="alert alert-success">
                     <p>{{ $message }}</p>
                 </div>
-                @endif
+                
                 </div>
             </div>
+            @endif
             <div class="card">
                 <div class="card-body">
                     
                 <table class="table table-bordered">
             <tr>
             <th>Redni br.</th>
-            <th>Agent</th>
             <th>Ime korisnika</th>
             <th>Naziv ticketa</th>
             <th>Opis</th>
@@ -54,7 +48,6 @@
         @foreach ($products as $product)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $product->user }}</td>
             <td><?php 
                 foreach($customers as $customer): ?>
                   <?php  if ($customer->id == $product->person): ?>
