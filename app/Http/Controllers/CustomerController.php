@@ -16,10 +16,10 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customers = Customer::latest()->paginate(5);
+        $customers = Customer::orderby('first_name', 'asc')->paginate(5);
         $products = Product::all();
         return view('customers.index',compact('customers', 'products'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 2) - 1) * 5);
     }
   
     /**

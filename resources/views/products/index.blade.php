@@ -13,7 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
+            <?php if (Auth::user()->name == NULL) {
+                return view('home');
+            } ?>
             <?php if(Auth::user()->type == 'agent'): ?>
                     
                     <a href="{{ route('products.create') }}" class="poveznica2">Novi ticket</a>
