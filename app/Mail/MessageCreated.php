@@ -16,9 +16,8 @@ class MessageCreated extends Mailable
      *
      * @return void
      */
-    public function __construct($message)
+    public function __construct()
     {
-        $this->message = $message;
     }
 
     /**
@@ -28,6 +27,10 @@ class MessageCreated extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mail.message-created');
+        return $this
+        ->from('admin@admin.com')
+        ->to('m.sljivic25@gmail.com')
+        ->subject('Status has been changed')
+        ->markdown('status.changed');
     }
 }

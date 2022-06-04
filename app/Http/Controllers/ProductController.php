@@ -103,18 +103,8 @@ class ProductController extends Controller
             
         ]);
         $product->update($request->all());
-        /*$customers = Customer::all();
-        foreach ($customers as $cus) {
-            if($cus->id == $product->person) {
-                $email = $cus->email;
-            }
-        }
-        $message = $request->all();
-        Mail::to($email)->queue(new MessageCreated($message));
-        Mail::raw("name: $message->name \n message: $message->description", function($message) {
-            $message->to("$email")
-            ->subject('New contact form is submitted.');
-       });*/
+       
+        Mail::send(new MessageCreated());
 
         return redirect()->route('products.index')
                         ->with('success','Uspješno ažuriran ticket.');
