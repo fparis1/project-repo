@@ -41,9 +41,9 @@
             <tr>
             <th>Redni br.</th>
             <th>Ime korisnika</th>
-            <th>Naziv ticketa</th>
-            <th>Opis</th>
-            <th>Status</th>
+            <th>@sortablelink('name', 'Naziv ticketa')</th>
+            <th>@sortablelink('description', 'Opis')</th>
+            <th>@sortablelink('status', 'Status')</th>
             <th>Radnje</th>
         </tr>
         @foreach ($products as $product)
@@ -104,8 +104,7 @@
         </tr>
         @endforeach
     </table>
-  
-    {!! $products->links() !!}  
+    {!! $products->appends(\Request::except('page'))->render() !!} 
                 </div>
             </div>
         </div>

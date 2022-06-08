@@ -40,9 +40,9 @@
                 <table class="table table-bordered">
             <tr>
             <th>Redni br.</th>
-            <th>Ime i Prezime</th>
-            <th>email</th>
-            <th>Broj telefona</th>
+            <th>@sortablelink('first_name', 'Ime i Prezime')</th>
+            <th>@sortablelink('email', 'email')</th>
+            <th>@sortablelink('phone', 'Broj telefona')</th>
             <th>Radnje</th>
         </tr>
         @foreach ($customers as $customer)
@@ -70,7 +70,7 @@
         @endforeach
     </table>
   
-    {!! $customers->links() !!}  
+    {!! $customers->appends(\Request::except('page'))->render() !!}  
                 </div>
             </div>
         </div>

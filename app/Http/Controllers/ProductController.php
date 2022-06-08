@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Message;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MessageCreated;
+
   
 class ProductController extends Controller
 {
@@ -19,7 +20,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->paginate(5);
+        $products = Product::sortable()->paginate(5);
         $customers = Customer::all();
         return view('products.index',compact('products', 'customers'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
