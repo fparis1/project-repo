@@ -60,3 +60,7 @@ form {
 .td-text-green {color: rgb(0, 177, 0);}
 .td-text-yellow {color: rgb(179, 179, 2);}
 .td-text-red {color: red;}
+
+span.disable-links {
+  pointer-events: none;
+}

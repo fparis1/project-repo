@@ -44,7 +44,6 @@
             <th>Naziv ticketa</th>
             <th>Opis</th>
             <th>Status</th>
-            <th>Tehničar</th>
             <th>Radnje</th>
         </tr>
         @foreach ($products as $product)
@@ -53,7 +52,7 @@
             <td><?php 
                 foreach($customers as $customer): ?>
                   <?php  if ($customer->id == $product->person): ?>
-                        {{ $customer->first_name }} {{ $customer->surname }}<br>
+                     {{ $customer->first_name }} {{ $customer->surname }}<br>
                         <?php if(Auth::user()->type == 'agent'): ?>
                         <a  href="{{ route('buyers.show',$customer->id) }}">Detalji</a>
                         <?php endif ;?>
@@ -77,12 +76,19 @@
                     {{ 'td-text-red' }}
                 @endif"
             ><strong>{{ $product->status }}</strong></div></td>
-            <td>{{ $product->tech }}</td>
-            <td>
+            <td>&nbsp<br>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                     
                     <a  href="{{ route('products.show',$product->id) }}" class="poveznica2" id="show">Pokaži</a>
+                    @if (Auth::user()->type == 'tech')
+                            @if ($product->status == 'zatvoren')
+                            <span class="disable-links"><a  href="{{ route('products.edit',$product->id) }}" class="poveznica2" id="edit">Izmjeni</a></span>
+                            @else
+                            <a  href="{{ route('products.edit',$product->id) }}" class="poveznica2" id="edit">Izmjeni</a>
+                            @endif
+                    @else
                     <a  href="{{ route('products.edit',$product->id) }}" class="poveznica2" id="edit">Izmjeni</a>
+                    @endif
                     <?php if(Auth::user()->type == 'agent'): ?>
 
                     @csrf
@@ -91,6 +97,7 @@
                     <input type="submit" value="Izbriši">
                     <?php endif; ?>
                 </form>
+                <br>&nbsp
             </td>
             <td><a href="{{ route('comments.show',$product->id) }}">Komentari</a></td>
             

@@ -2,10 +2,13 @@
 
 # Status of your ticket has been changed
 
-@component('mail::button', ['url' => 'http://localhost/project-repo/public/products'])
-    More details
-@endcomponent
+@component('mail::table')
+| Agent   | Ime ticketa    | Opis ticketa      | Status         | Tech |
+| :------------------- | :------------------- | :-------------------------- | :-------------------- | :-------------------- |
+| {{ $product->user }} | {{ $product->name }} | {{ $product->description }} | {{ $product->status}} | {{ $product->tech}} |
+   
 
-Thanks,<br>
-Laravel
+@endcomponent
+Pozdrav,<br>
+{{ Auth::user()->name }}
 @endcomponent

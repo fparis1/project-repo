@@ -92,11 +92,21 @@
                 @endif
                 </div>
                 <strong>Status:</strong>
-                <div>
+                @if (Auth::user()->type == 'tech')
+                  @if ($product->status == 'zatvoren')
+                  <div class="block">
                         <input type="radio" name="status" value="otvoren" {{$product->status == 'otvoren' ? 'checked' : ''}}><label>Otvoren</label><br>
                         <input type="radio" name="status" value="zaduzen" {{$product->status == 'zaduzen' ? 'checked' : ''}}> <label>Zadužen</label><br>
                         <input type="radio" name="status" value="zatvoren" {{$product->status == 'zatvoren' ? 'checked' : ''}}> <label>Zatvoren</label>
                   </div>
+                  @endif
+                  @else 
+                  <div>
+                        <input type="radio" name="status" value="otvoren" {{$product->status == 'otvoren' ? 'checked' : ''}}><label>Otvoren</label><br>
+                        <input type="radio" name="status" value="zaduzen" {{$product->status == 'zaduzen' ? 'checked' : ''}}> <label>Zadužen</label><br>
+                        <input type="radio" name="status" value="zatvoren" {{$product->status == 'zatvoren' ? 'checked' : ''}}> <label>Zatvoren</label>
+                  </div>
+                @endif
                   <div>
                       <br>
                     <div>
