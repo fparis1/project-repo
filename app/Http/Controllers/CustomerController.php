@@ -19,7 +19,7 @@ class CustomerController extends Controller
         $customers = Customer::sortable()->paginate(5);
         $products = Product::all();
         return view('customers.index',compact('customers', 'products'))
-            ->with('i', (request()->input('page', 2) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
   
     /**
