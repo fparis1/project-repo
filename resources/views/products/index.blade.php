@@ -46,7 +46,55 @@
             <th>@sortablelink('status', 'Status')</th>
             <th>Radnje</th>
         </tr>
+        <?php $check = 0; ?>
         @foreach ($products as $product)
+        @if (Auth::user()->type == 'tech')
+        @if ($product->tech == Auth::user()->name)
+        <?php $check += 1; ?>
+        <tr>
+            <td>{{ ++$i }}</td>
+            <td><?php 
+                foreach($customers as $customer): ?>
+                  <?php  if ($customer->id == $product->person): ?>
+                     {{ $customer->first_name }} {{ $customer->surname }}<br>
+                     <?php endif; ?>
+                <?php endforeach; ?>
+                
+               
+                
+                    </td>
+            <td>{{ $product->name }}</td>
+            <td>{{ $product->description }}</td>
+            <td><div
+                    class="
+                @if($product->status == 'otvoren')
+                    {{ 'td-text-green' }}
+                @elseif($product->status == 'zaduzen')
+                    {{ 'td-text-yellow' }}
+                @elseif($product->status == 'zatvoren')
+                    {{ 'td-text-red' }}
+                @endif"
+            ><strong>{{ $product->status }}</strong></div></td>
+            <td>&nbsp<br>
+                <form action="{{ route('products.destroy',$product->id) }}" method="POST">
+                    
+                    <a  href="{{ route('products.show',$product->id) }}" class="poveznica2" id="show">Pokaži</a>
+                   
+                            @if ($product->status == 'zatvoren')
+                            <span class="disable-links"><a  href="{{ route('products.edit',$product->id) }}" class="poveznica2" id="edit">Izmjeni</a></span>
+                            @else
+                            <a  href="{{ route('products.edit',$product->id) }}" class="poveznica2" id="edit">Izmjeni</a>
+                            @endif
+                    
+                    
+                </form>
+                <br>&nbsp
+            </td>
+            <td><a href="{{ route('comments.show',$product->id) }}">Komentari</a></td>
+            
+        </tr>
+        @endif
+        @else
         <tr>
             <td>{{ ++$i }}</td>
             <td><?php 
@@ -102,8 +150,13 @@
             <td><a href="{{ route('comments.show',$product->id) }}">Komentari</a></td>
             
         </tr>
+        @endif
         @endforeach
     </table>
+    <?php if ($check == 0) {
+            echo "Trenutno nema zaduženih ticketa";
+        } ?>
+
     {!! $products->appends(\Request::except('page'))->render() !!} 
                 </div>
             </div>

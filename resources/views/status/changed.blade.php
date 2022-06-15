@@ -1,6 +1,6 @@
 @component('mail::message')
 
-# Status of your ticket has been changed
+# Your ticket has been changed
 
 @component('mail::table')
 | Agent   | Ime ticketa    | Opis ticketa      | Status         | Tech |
