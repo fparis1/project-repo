@@ -105,7 +105,9 @@ class ProductController extends Controller
         ]);
         $product->update($request->all());
        
-        Mail::send(new MessageCreated($product));
+        if ($product->person == '7') {
+            Mail::send(new MessageCreated($product));
+        }
 
         return redirect()->route('products.index')
                         ->with('success','Uspješno ažuriran ticket.');

@@ -153,9 +153,12 @@
         @endif
         @endforeach
     </table>
-    <?php if ($check == 0) {
+    <?php if (Auth::user()->type == 'tech') {
+        if ($check == 0) {
             echo "Trenutno nema zaduženih ticketa";
-        } ?>
+        }
+    }
+    ?>
 
     {!! $products->appends(\Request::except('page'))->render() !!} 
                 </div>
