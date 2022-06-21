@@ -40,10 +40,17 @@
                 <table class="table table-bordered">
             <tr>
             <th>Redni br.</th>
+            @if (Auth::user()->type == 'agent')
             <th>Ime korisnika</th>
             <th>@sortablelink('name', 'Naziv ticketa')</th>
             <th>@sortablelink('description', 'Opis')</th>
             <th>@sortablelink('status', 'Status')</th>
+            @else 
+            <th>Ime korisnika</th>
+            <th>Naziv ticketa</th>
+            <th>Opis</th>
+            <th>Status</th>
+            @endif
             <th>Radnje</th>
         </tr>
         <?php $check = 0; ?>
@@ -160,7 +167,9 @@
     }
     ?>
 
-    {!! $products->appends(\Request::except('page'))->render() !!} 
+    @if (Auth::user()->type == 'agent')
+    {!! $products->appends(\Request::except('page'))->render() !!}
+    @endif
                 </div>
             </div>
         </div>
