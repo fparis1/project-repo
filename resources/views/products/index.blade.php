@@ -115,7 +115,6 @@
 
 -----------------------------------------------------------------------------------
 -->
-
 <div class="container" id="stil2">
     @if ($message = Session::get('success'))
         <div class="card" id="stil1">
@@ -141,10 +140,10 @@
    
         <div class="card-body">
             <div class="row justify-content-center">
-                <div class="col-6 col-sm-4 col-md-3 col-lg-3" ><p class="btn btn-link">@sortablelink('person', 'Ime korisnika')</p></div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-3" ><p class="btn btn-link">@sortablelink('name', 'Naziv ticketa')</p></div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-3" ><p class="btn btn-link">@sortablelink('description', 'Opis')</p></div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-3" ><p class="btn btn-link">@sortablelink('status', 'Status')</p></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-3" ><p class="btn btn-light">@sortablelink('person', 'Ime korisnika')</p></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-3" ><p class="btn btn-light">@sortablelink('name', 'Naziv ticketa')</p></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-3" ><p class="btn btn-light">@sortablelink('description', 'Opis')</p></div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-3" ><p class="btn btn-light">@sortablelink('status', 'Status')</p></div>
             </div>
         </div>
     
@@ -207,8 +206,10 @@
 @else
 
 @endif
-@if (Auth::user()->type == 'agent')
-    {!! $products->appends(\Request::except('page'))->render() !!}
-    @endif
+{!! $products->appends(Request::except('page'))->render() !!}
+
+<p>
+    Displaying {{$products->count()}} of {{ $products->total() }} product(s).
+</p>
 
 @endsection

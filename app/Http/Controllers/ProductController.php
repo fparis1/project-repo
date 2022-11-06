@@ -126,4 +126,19 @@ class ProductController extends Controller
         return redirect()->route('products.index')
                         ->with('success','Uspješno izbrisan ticket.');
     }
+    public function indexFiltering(Request $request)
+{
+    $filter = $request->query('filter');
+
+    if (!empty($filter)) {
+        $products = Product::sortable()
+            ->where('products.name', 'like', '%'.$filter.'%')
+            ->paginate(5);
+    } else {
+        $products = Product::sortable()
+            ->paginate(5);
+    }
+
+    return view('products.index-filtering')->with('products', $products)->with('filter', $filter);
+}
 }
