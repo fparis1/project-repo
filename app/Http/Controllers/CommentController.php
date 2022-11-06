@@ -36,9 +36,13 @@ class CommentController extends Controller
             'person' => 'required',
             'comment' => 'required',
         ]);
-      
-        Comment::create($request->all());
-        return redirect()->route('products.index');
+        
+        $comment = Comment::create($request->all());
+        //return redirect()->back()->withInput();
+        $users = User::all();
+        $comments = Comment::all();
+        return view('comments.index',compact('comment', 'users', 'comments'))
+                 ->with('i', (request()->input('page', 1) - 1) * 5);
         
     }
 

@@ -37,7 +37,7 @@
                   <label>Ime korisnika:</label>
                   <select class="form-control" name="person">
                         @foreach ($customers as $customer)
-                              <option value="{{ $customer->id }}">{{ $customer->first_name }} {{ $customer->surname }}</option>
+                              <option value="{{ $customer->name }}">{{ $customer->name }}</option>
                         @endforeach
                   </select>
                   <a href="./../buyers">Novi korisnik</a>

@@ -40,7 +40,7 @@
                 <table class="table table-bordered">
             <tr>
             <th>Redni br.</th>
-            <th>@sortablelink('first_name', 'Ime i Prezime')</th>
+            <th>@sortablelink('name', 'Ime i Prezime')</th>
             <th>@sortablelink('email', 'email')</th>
             <th>@sortablelink('phone', 'Broj telefona')</th>
             <th>Radnje</th>
@@ -48,7 +48,7 @@
         @foreach ($customers as $customer)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $customer->first_name }} {{ $customer->surname }}
+            <td>{{ $customer->name }}
                 <br><a href="{{ route('cards.show',$customer->id) }}">Ticketi korisnika</a>
             </td>
             <td>{{ $customer->email }}</td>

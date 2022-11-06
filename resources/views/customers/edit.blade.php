@@ -28,12 +28,8 @@
                 @csrf
                 @method('PUT')
                 <div>
-                <strong>Ime</strong>
-                    <input type="text" name="first_name" value="{{ $customer->first_name }}" placeholder="Ime">
-                </div>
-                <div>
-                <strong>Prezime</strong>
-                    <input type="text" name="surname" value="{{ $customer->surname }}" placeholder="Prezime">
+                <strong>Ime i Prezime</strong>
+                    <input type="text" name="name" value="{{ $customer->name }}" placeholder="Ime i Prezime">
                 </div>
                 <div>
                 <strong>Email</strong>

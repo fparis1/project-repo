@@ -11,6 +11,11 @@
                   </div>
                   </div>
                   <div class="card">
+                        <div class="card-body">
+                        <a href="{{ route('products.create') }}" class="poveznica2">Povratak</a>
+                        </div>
+                  </div>
+                  <div class="card">
                 <div class="card-body">
                 <div class="container">
 
@@ -29,12 +34,8 @@
 
                 @csrf
                   <div>
-                        <label>Ime</label>
-                        <input type="text" name="first_name" placeholder="Ime">    
-                  </div>
-                  <div>
-                        <label>Prezime</label>
-                         <input type="text" name="surname" placeholder="Prezime">
+                        <label>Ime i Prezime</label>
+                         <input type="text" name="name" placeholder="Ime i Prezime">
 
                   </div>
                   <div>

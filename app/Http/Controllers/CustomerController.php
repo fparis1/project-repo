@@ -41,8 +41,7 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first_name' => 'required',
-            'surname' => 'required',
+            'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
         ]);
@@ -85,8 +84,7 @@ class CustomerController extends Controller
     public function update(Request $request, Customer $customer)
     {
         $request->validate([
-            'first_name' => 'required',
-            'surname' => 'required',
+            'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
         ]);

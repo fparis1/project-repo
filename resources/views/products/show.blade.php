@@ -22,11 +22,7 @@
                 <hr>
                 <div>
                 <strong>Korisnik:</strong><br>
-                <?php foreach($customers as $customer) {
-                    if ($customer->id == $product->person) {
-                        echo "$customer->first_name $customer->surname";
-                    }
-                } ?>
+                {{ $product->person }}
                 </div>
                 <hr>
                 

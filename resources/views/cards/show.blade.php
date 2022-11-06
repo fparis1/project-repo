@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <div>
                     <strong>Korisnik:</strong><br>
-                    {{ $card->first_name}} {{ $card->surname }}
+                    {{ $card->name}}
                     </div>
                     <br><br>
                 <table class="table table-bordered">
@@ -31,7 +31,7 @@
         <?php $check = 0; ?>
         @foreach ($prods as $prod)
         <tr>
-            @if ($card->id == $prod->person)
+            @if ($card->name == $prod->person)
             <?php $check += 1; ?>
             <td>{{ ++$i }}</td>
             <td>{{ $prod->user }}</td>

@@ -18,7 +18,13 @@
                     <strong><?php echo Auth::user()->name; ?></strong>
                 </div>
             </div>
-            
+                    <div class="random">
+                    <strong><center>Did you know?</center></strong>
+                    <hr>
+                    <br>
+                        {{ $random->text }}
+                    </div>
+                
         </div>
     </div>
 </div>

@@ -30,8 +30,7 @@ class BuyerController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first_name' => 'required',
-            'surname' => 'required',
+            'name' => 'required',
             'email' => 'required',
             'phone' => 'required',
         ]);

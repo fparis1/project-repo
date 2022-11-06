@@ -105,8 +105,9 @@ class ProductController extends Controller
         ]);
         $product->update($request->all());
        
-        if ($product->person == '7') {
+        if ($product->person == 'Mateo Šljivić') {
             Mail::send(new MessageCreated($product));
+            
         }
 
         return redirect()->route('products.index')

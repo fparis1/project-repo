@@ -34,13 +34,8 @@
 
                 @csrf
                   <div>
-                        <label>Ime</label>
-                        <input type="text" name="first_name" placeholder="Ime">    
-                  </div>
-                  <div>
-                        <label>Prezime</label>
-                         <input type="text" name="surname" placeholder="Prezime">
-
+                        <label>Ime i Prezime</label>
+                        <input type="text" name="name" placeholder="Ime i Prezime">    
                   </div>
                   <div>
                         <label>Email</label>

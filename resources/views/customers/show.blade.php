@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Prikaz pojedinog ticketa</div>
+                <div class="card-header">Prikaz pojedinog korisnika</div>
             </div>
             <div class="card">
                 <div class="card-body">
@@ -16,13 +16,8 @@
             <div class="card">
                 <div class="card-body">
                 <div>
-                <strong>Ime:</strong><br>
-                {{ $customer->first_name }}
-                </div>
-                <hr>
-                <div>
-                <strong>Prezime</strong><br>
-                {{ $customer->surname }}
+                <strong>Ime i Prezime</strong><br>
+                {{ $customer->name }}
                 </div>
                 <hr>
                 <div>

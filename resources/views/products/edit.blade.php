@@ -58,20 +58,17 @@
                 @if (Auth::user()->type == 'agent')
                 <select class="form-control" name="person">
                         @foreach ($customers as $customer)
-                            @if ($customer->id == $product->person)
-                              <option selected value="{{ $customer->id }}">{{ $customer->first_name }} {{ $customer->surname }}</option>
+                            @if ($customer->name == $product->person)
+                              <option selected value="{{ $product->person }}">{{ $product->person }}</option>
                             @else
-                            <option value="{{ $customer->id }}">{{ $customer->first_name }} {{ $customer->surname }}</option>
+                            <option value="{{ $customer->name }}">{{ $customer->name }}</option>
                             @endif
                         @endforeach
                   </select>
                 @else
                 <select class="form-control" name="person">
-                        @foreach ($customers as $customer)
-                            @if ($customer->id == $product->person)
-                              <option selected value="{{ $customer->id }}">{{ $customer->first_name }} {{ $customer->surname }}</option>
-                            @endif
-                        @endforeach
+                              <option selected value="{{ $product->person }}">{{ $product->person }}</option>
+                           
                   </select>
                 @endif
                 </div>

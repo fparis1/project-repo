@@ -15,7 +15,7 @@
                     @endif
 
                    
-                    <form method="get" action="./../products">
+                    <form method="get" action="{{ route('products.index')}} ">
                                 <input type="submit" value="Nazad">
                     </form>
                 </div>
