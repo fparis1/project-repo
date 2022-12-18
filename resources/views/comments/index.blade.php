@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" id="stil1">
                 <div class="card-header">Svi komentari</div>
 
                 <div class="card-body">
@@ -16,30 +16,30 @@
 
                    
                     <form method="get" action="{{ route('products.index')}} ">
-                                <input type="submit" value="Nazad">
+                                <input type="submit" value="Nazad" class="btn btn-primary">
                     </form>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="stil1">
                 <div class="card-body">
                     
-                    <a href="{{ route('comments.edit',$comment->id) }}" class="poveznica2">Novi komentar</a>
+                    <a href="{{ route('comments.edit',$comment->id) }}" class="btn btn-secondary">Novi komentar</a>
                     
                 </div>
             </div>
-            <div class="card">
+            @if ($message = Session::get('success'))
+            <div class="card" id="stil1">
                 <div class="card-body">
-                @if ($message = Session::get('success'))
                 <div class="alert alert-success">
                     <p>{{ $message }}</p>
                 </div>
-                @endif
                 </div>
             </div>
-            <div class="card">
+            @endif
+            <div class="card" id="stil1">
                 <div class="card-body">
                     
-        <table class="table table-bordered">
+        <table class="table table-bordered" id="stil1">
             <tr>
             <th>Redni br.</th>
             <th>Ime i Prezime</th>
@@ -60,7 +60,7 @@
                     @csrf
                     @method('DELETE')
       
-                    <input type="submit" value="Izbriši">
+                    <input type="submit" value="Izbriši" class="btn btn-danger">
                 </form>
             </td>
         </tr>

@@ -4,12 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" id="stil1">
                 <div class="card-header">Izmjena ticketa</div>
             </div>
-            <div class="card">
+            <div class="card" id="stil1">
                 <div class="card-body">
-                <a href="{{ route('products.index') }}" class="poveznica2">Povratak</a>
+                <a href="{{ route('products.index') }}" class="btn btn-primary">Povratak</a>
                 </div>
             </div>
             @if ($errors->any())
@@ -22,7 +22,7 @@
             </ul>
         </div>
             @endif
-            <div class="card">
+            <div class="card" id="stil1">
                 <div class="card-body">
                 <form action="{{ route('products.update',$product->id) }}" method="POST">
                 @csrf
@@ -124,7 +124,7 @@
                     @endif
                     </div>
                     <br>
-                    <input type="submit" value="Pošalji">
+                    <input type="submit" value="Pošalji" class="btn btn-primary">
 
                 </div>
                 </div>

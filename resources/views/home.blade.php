@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" id="stil1">
                 <div class="card-header">Glavna stranica</div>
 
                 <div class="card-body">
@@ -18,7 +18,7 @@
                     <strong><?php echo Auth::user()->name; ?></strong>
                 </div>
             </div>
-                    <div class="random">
+                    <div class="random" id="stil2">
                     <strong><center>Did you know?</center></strong>
                     <hr>
                     <br>

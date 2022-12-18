@@ -4,16 +4,16 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-            <div class="card">
+            <div class="card" id="stil1">
                 <div class="card-header">Prikaz pojedinog ticketa</div>
             </div>
-            <div class="card">
+            <div class="card" id="stil1">
                 <div class="card-body">
-                <a href="{{ route('products.index') }}" class="poveznica2">Povratak</a>
+                <a href="{{ route('products.index') }}" class="btn btn-primary">Povratak</a>
                 </div>
 
             </div>
-            <div class="card">
+            <div class="card" id="stil1">
                 <div class="card-body">
                 <div>
                 <strong>Agent:</strong><br>
