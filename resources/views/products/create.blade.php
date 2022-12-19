@@ -4,18 +4,18 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" id="stil1">
 
                 <div class="card-body">
-                    <h2>Novi upit</h2>
+                    <h2>Novi ticket</h2>
                   </div>
                   </div>
-                  <div class="card">
+                  <div class="card" id="stil1">
                         <div class="card-body">
-                        <a href="{{ route('products.index') }}" class="poveznica2">Povratak</a>
+                        <a href="{{ route('products.index') }}" class="btn btn-primary">Povratak</a>
                         </div>
                   </div>
-                  <div class="card">
+                  <div class="card" id="stil1">
                 <div class="card-body">
                 <div class="container">
 
@@ -40,7 +40,7 @@
                               <option value="{{ $customer->name }}">{{ $customer->name }}</option>
                         @endforeach
                   </select>
-                  <a href="./../buyers">Novi korisnik</a>
+                  <a href="./../buyers" class="btn btn-secondary">Novi korisnik</a>
                   </div>
                   <br>
                   <div>
@@ -76,7 +76,7 @@
                   <br>
                   <input type="hidden" name="comment" value="|">
                   <div>
-                        <input type="submit" value="Pošalji">
+                        <input type="submit" value="Pošalji" class="btn btn-primary">
 
                   </div>
 

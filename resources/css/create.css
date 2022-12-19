@@ -64,6 +64,24 @@ input[type=submit]:hover, button[type="submit"]:hover {
   background-color: rgb(129, 129, 129. .1);
 
 }
+
+#stil3 {
+  color: var(--color-font);
+  margin-top: 400px;
+  font-size: xx-large;
+}
+
+#stil4 {
+  color: var(--color-font);
+  background-color: var(--color-bg);
+}
+#stil5 {
+  color: var(--color-font);
+  background-color: var(--color-bg);
+  border-style:outset;
+  border-color: var(--color-font);
+}
+
 body {
   background-color: var(--color-bg);
 }
@@ -75,7 +93,7 @@ body {
 }
 
 [data-theme="dark"] {
-  --color-bg: #09053b;
+  --color-bg: #020020;
   --color-font: #ffffff;
   --color-nav: #161616;
 }

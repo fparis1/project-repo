@@ -15,14 +15,14 @@
                     @endif
 
                     Pozdrav
-                    <strong><?php echo Auth::user()->name; ?></strong>
+                    <strong style="font-size:large;"><?php echo Auth::user()->name; ?></strong>
                 </div>
             </div>
                     <div class="random" id="stil2">
                     <strong><center>Did you know?</center></strong>
                     <hr>
                     <br>
-                        {{ $random->text }}
+                        <center>{{ $random->text }}</center>
                     </div>
                 
         </div>

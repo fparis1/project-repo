@@ -4,18 +4,18 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" id="stil1">
 
                 <div class="card-body">
                     <h2>Novi korisnik</h2>
                   </div>
                   </div>
-                  <div class="card">
+                  <div class="card" id="stil1">
                         <div class="card-body">
-                        <a href="{{ route('products.create') }}" class="poveznica2">Povratak</a>
+                        <a href="{{ route('products.create') }}" class="btn btn-primary">Povratak</a>
                         </div>
                   </div>
-                  <div class="card">
+                  <div class="card" id="stil1">
                 <div class="card-body">
                 <div class="container">
 
@@ -51,7 +51,7 @@
                   <br>
                   <div>
 
-                        <input type="submit" value="Pošalji">
+                        <input type="submit" value="Pošalji" class="btn btn-primary">
 
                   </div>
 
