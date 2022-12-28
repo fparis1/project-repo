@@ -16,7 +16,7 @@
                             return view('home');
                         } ?>
                 <?php if(Auth::user()->type == 'agent'): ?>
-                    <a href="{{ route('products.create') }}" class="btn btn-primary">Novi ticket</a>
+                    <a href="{{ route('products.create') }}" class="btn btn-secondary">Novi ticket</a>
                 <?php endif; ?>
         </left>
     </div>

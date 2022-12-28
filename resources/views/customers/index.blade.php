@@ -17,7 +17,7 @@
                         return view('home');
                     } ?>
             <?php if(Auth::user()->type == 'agent'): ?>
-                <a href="{{ route('customers.create') }}" class="btn btn-primary">Novi korisnik</a>
+                <a href="{{ route('customers.create') }}" class="btn btn-secondary">Novi korisnik</a>
             <?php endif; ?>
     </left>
   </div>

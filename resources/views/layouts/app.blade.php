@@ -32,8 +32,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-custom">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" id="stil6">
+                    <span class="navbar-toggler-icon my-toggler"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -41,16 +41,16 @@
 
                     <?php if(Auth::check()): ?>
                 <li class="nav-item">
-                    <a class="nav-link {{(Request::is('home') || Request::is('home/*')) ? 'active' : ''}}" aria-current="page" href="{{ url('/home') }}" id="stil2">
+                    <a class="nav-link" aria-current="page" href="{{ url('/home') }}" id="stil2">
                   Početna stranica
                 </a></li>
                 <li class="nav-item">
-                    <a class="nav-link {{(Request::is('products') || Request::is('products/*')) ? 'active' : ''}}" aria-current="page" href="{{ url('/products') }}" id="stil2">
+                    <a class="nav-link" aria-current="page" href="{{ url('/products') }}" id="stil2">
                   Svi ticketi
                 </a></li>
                 <?php if(Auth::user()->type == 'agent'): ?>
                    <li class="nav-item"> 
-                    <a class="nav-link {{(Request::is('customers') || Request::is('customers/*')) ? 'active' : ''}}" aria-current="page" href="{{ url('/customers') }}" id="stil2">
+                    <a class="nav-link" aria-current="page" href="{{ url('/customers') }}" id="stil2">
                   Svi korisnici
                 </a></li>
                 <?php endif; ?>
@@ -139,9 +139,10 @@
         }
         </script>
         <main class="py-4">
-            @yield('content')
+            
+                @yield('content')
+            
         </main>
     </div>
-    
 </body>
 </html>

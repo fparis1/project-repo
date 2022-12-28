@@ -12,7 +12,7 @@
                   </div>
                   <div class="card">
                         <div class="card-body">
-                        <a href="./products" class="poveznica2">Povratak</a>
+                        <a href="{{ url()->previous() }}" class="btn btn-primary">Povratak</a>
                         </div>
                   </div>
                   <div class="card">

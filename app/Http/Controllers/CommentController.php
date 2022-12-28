@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\Comment;
+use Illuminate\Support\Facades\Session;
 
 class CommentController extends Controller
 {
@@ -19,6 +20,7 @@ class CommentController extends Controller
     {
         $users = User::all();
         $comments = Comment::all();
+        Session::put('requestReferrer', url()->current());
         return view('comments.index',compact('comment', 'users', 'comments'))
                  ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -39,10 +41,13 @@ class CommentController extends Controller
         
         $comment = Comment::create($request->all());
         //return redirect()->back()->withInput();
-        $users = User::all();
-        $comments = Comment::all();
-        return view('comments.index',compact('comment', 'users', 'comments'))
-                 ->with('i', (request()->input('page', 1) - 1) * 5);
+        $products = Product::all();
+        foreach($products as $product) {
+            if ($product->name == $request->name) {
+                $ids = $product->id;
+            }
+        }
+        return redirect(Session::get('requestReferrer'));
         
     }
 
@@ -67,6 +72,6 @@ class CommentController extends Controller
     {
         $comment->delete();
        
-       return redirect()->back();
+        return redirect(Session::get('requestReferrer'));
     }
 }

@@ -67,8 +67,10 @@ input[type=submit]:hover, button[type="submit"]:hover {
 
 #stil3 {
   color: var(--color-font);
-  margin-top: 400px;
   font-size: xx-large;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 200px;
 }
 
 #stil4 {
@@ -81,6 +83,10 @@ input[type=submit]:hover, button[type="submit"]:hover {
   border-style:outset;
   border-color: var(--color-font);
 }
+#stil6 {
+  color: var(--color-font2);
+  background-color: var(--color-bg2);
+}
 
 body {
   background-color: var(--color-bg);
@@ -90,6 +96,8 @@ body {
   --color-bg: #ffffff;
   --color-font: #000000;
   --color-nav: #a8a8a8;
+  --color-bg2: #747272;
+  --color-font2: #000000;
 }
 
 [data-theme="dark"] {
@@ -135,10 +143,9 @@ form {
   display: inline;
 }
 .random {
-  margin-top: 400px;
-  margin-left: -80px;
-  margin-right: -80px;
+  margin-top: 200px;
 } 
+
 /*
 #show {
   background-color: rgb(67, 168, 67);
