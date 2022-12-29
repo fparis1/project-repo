@@ -48,7 +48,7 @@ class CustomerController extends Controller
       
         Customer::create($request->all());
         return redirect()->route('customers.index')
-                        ->with('success','Korisnik uspješno stvoren.');
+                        ->with('success','Customer successfully created.');
         
     }
   
@@ -92,7 +92,7 @@ class CustomerController extends Controller
         $customer->update($request->all());
       
         return redirect()->route('customers.index')
-                        ->with('success','Korisnik uspješno ažuriran.');
+                        ->with('success','Customer successfully updated.');
     }
     /**
      * Remove the specified resource from storage.
@@ -105,6 +105,6 @@ class CustomerController extends Controller
         $customer->delete();
        
         return redirect()->route('customers.index')
-                        ->with('success','Korisnik uspješno izbrisan.');
+                        ->with('success','Customer successfully deleted.');
     }
 }

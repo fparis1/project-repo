@@ -7,12 +7,12 @@
             <div class="card" id="stil1">
 
                 <div class="card-body">
-                    <h2>Novi korisnik</h2>
+                    <h2>New cutomers</h2>
                   </div>
                   </div>
                   <div class="card" id="stil1">
                         <div class="card-body">
-                        <a href="{{ route('products.create') }}" class="btn btn-primary">Povratak</a>
+                        <a href="{{ route('products.create') }}" class="btn btn-primary">Return</a>
                         </div>
                   </div>
                   <div class="card" id="stil1">
@@ -34,8 +34,8 @@
 
                 @csrf
                   <div>
-                        <label>Ime i Prezime</label>
-                         <input type="text" name="name" placeholder="Ime i Prezime">
+                        <label>Name and Surname</label>
+                         <input type="text" name="name" placeholder="Name and Surname">
 
                   </div>
                   <div>
@@ -43,7 +43,7 @@
                         <input type="text" name="email" placeholder="email">
 
                    </div>
-                   <label>Broj telefona</label>
+                   <label>Phone number</label>
                    <div>
                         <input type="text" name="phone" placeholder="+385...">
                         
@@ -51,7 +51,7 @@
                   <br>
                   <div>
 
-                        <input type="submit" value="Pošalji" class="btn btn-primary">
+                        <input type="submit" value="Submit" class="btn btn-primary">
 
                   </div>
 

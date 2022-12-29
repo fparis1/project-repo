@@ -7,12 +7,12 @@
             <div class="card" id="stil1">
 
                 <div class="card-body">
-                    <h2>Novi ticket</h2>
+                    <h2>New ticket</h2>
                   </div>
                   </div>
                   <div class="card" id="stil1">
                         <div class="card-body">
-                        <a href="{{ route('products.index') }}" class="btn btn-primary">Povratak</a>
+                        <a href="{{ route('products.index') }}" class="btn btn-primary">Return</a>
                         </div>
                   </div>
                   <div class="card" id="stil1">
@@ -34,13 +34,13 @@
 
                 @csrf
                   <div>
-                  <label>Ime korisnika:</label>
+                  <label>Customer name:</label>
                   <select class="form-control" name="person">
                         @foreach ($customers as $customer)
                               <option value="{{ $customer->name }}">{{ $customer->name }}</option>
                         @endforeach
                   </select>
-                  <a href="./../buyers" class="btn btn-secondary">Novi korisnik</a>
+                  <a href="./../buyers" class="btn btn-secondary">New customer</a>
                   </div>
                   <br>
                   <div>
@@ -49,17 +49,17 @@
 
                   </div>
                   <div>
-                        <label>Naziv ticketa</label>
-                         <input type="text" name="name" placeholder="Naziv ticketa">
+                        <label>Ticket name</label>
+                         <input type="text" name="name" placeholder="Ticket name">
 
                   </div>
                   <div>
-                        <label >Opis</label>
-                         <textarea name="description" placeholder="Opis"></textarea>
+                        <label>Description</label>
+                         <textarea name="description" placeholder="Description"></textarea>
 
                    </div>
                    <div>
-                  <label>Tehničar na kojeg se zadužuje:</label>
+                  <label>Tehnician in charge of ticket:</label>
                        <select class="form-control" name="tech">
                              @foreach ($users as $user)
                               @if ($user->type == "tech")
@@ -69,9 +69,9 @@
                   </div>
                    Status:
                    <div>
-                        <input type="radio" name="status" value="otvoren" checked="checked"> <label>Otvoren</label><br>
-                        <input type="radio" name="status" value="zaduzen"> <label>Zadužen</label><br>
-                        <input type="radio" name="status" value="zatvoren"> <label>Zatvoren</label>
+                        <input type="radio" name="status" value="otvoren" checked="checked"> <label>Open</label><br>
+                        <input type="radio" name="status" value="zaduzen"> <label>Assigned</label><br>
+                        <input type="radio" name="status" value="zatvoren"> <label>Closed</label>
                   </div>
                   <br>
                   <input type="hidden" name="comment" value="|">

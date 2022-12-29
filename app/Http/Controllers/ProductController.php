@@ -58,7 +58,7 @@ class ProductController extends Controller
         Product::create($request->all());
        
         return redirect()->route('products.index')
-                        ->with('success','Uspješno stvaranje novog ticketa.');
+                        ->with('success','New ticket successfully created.');
     }
   
     /**
@@ -111,7 +111,7 @@ class ProductController extends Controller
         }
 
         return redirect()->route('products.index')
-                        ->with('success','Uspješno ažuriran ticket.');
+                        ->with('success','Successfully updated ticket.');
     }
     /**
      * Remove the specified resource from storage.
@@ -124,7 +124,7 @@ class ProductController extends Controller
         $product->delete();
        
         return redirect()->route('products.index')
-                        ->with('success','Uspješno izbrisan ticket.');
+                        ->with('success','Successfully deleted ticket.');
     }
     public function indexFiltering(Request $request)
 {

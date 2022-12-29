@@ -7,12 +7,12 @@
             <div class="card">
 
                 <div class="card-body">
-                    <h2>Novi komentar</h2>
+                    <h2>New comment</h2>
                   </div>
                   </div>
                   <div class="card">
                         <div class="card-body">
-                        <a href="{{ url()->previous() }}" class="btn btn-primary">Povratak</a>
+                        <a href="{{ url()->previous() }}" class="btn btn-primary">Return</a>
                         </div>
                   </div>
                   <div class="card">
@@ -30,7 +30,7 @@
                   </div>
                   @endif
                   
-                Uspješno stvoren novi komentar.
+                Successfully created new comment.
 
                   </div>   
                   

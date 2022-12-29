@@ -7,12 +7,12 @@
             <div class="card" id="stil1">
 
                 <div class="card-body">
-                    <h2>Novi komentar</h2>
+                    <h2>New comment</h2>
                   </div>
                   </div>
                   <div class="card" id="stil1">
                         <div class="card-body">
-                        <a href="{{ url()->previous() }}" class="btn btn-primary">Povratak</a>
+                        <a href="{{ url()->previous() }}" class="btn btn-primary">Return</a>
                         </div>
                   </div>
                   <div class="card" id="stil1">
@@ -41,13 +41,13 @@
                         <input type="text" name="person" value="<?php echo Auth::user()->name;?>" readonly>    
                   </div>
                   <div>
-                        <label>Komentar</label>
+                        <label>Comment</label>
                          <textarea name="comment"></textarea>
 
                   </div>
                   <div>
 
-                        <input type="submit" value="Pošalji" class="btn btn-primary">
+                        <input type="submit" value="Submit" class="btn btn-primary">
 
                   </div>
 

@@ -30,17 +30,27 @@
     <div class="card" id="stil1">
         <div class="card-body">
             <div class="row justify-content-center">
-                <br><center><div class="col-6 col-sm-4 col-md-3 col-lg-2"><strong>Ime agenta:</strong><br>{{ $product->user }}</div></center><hr>
-                <center><div class="col-6 col-sm-4 col-md-3 col-lg-2"><strong>Naziv ticketa:</strong><br>{{ $product->name }}</div></center><hr>
-                <center><div class="col-6 col-sm-4 col-md-3 col-lg-2"><strong>Opis ticketa:</strong><br>{{ $product->description }}</div></center><hr>
-                <center><div class="col-6 col-sm-4 col-md-3 col-lg-2"><strong>Status:</strong><br>{{ $product->status }}</div></center><hr>
-                <center><div class="col-6 col-sm-4 col-md-3 col-lg-2"><strong>Ime tehničara:</strong><br>{{ $product->tech }}</div></center><hr>
+                <br><center><div class="col-6 col-sm-4 col-md-3 col-lg-2"><strong>Agent name:</strong><br>{{ $product->user }}</div></center><hr>
+                <center><div class="col-6 col-sm-4 col-md-3 col-lg-2"><strong>Ticket name:</strong><br>{{ $product->name }}</div></center><hr>
+                <center><div class="col-6 col-sm-4 col-md-3 col-lg-2"><strong>Ticket description:</strong><br>{{ $product->description }}</div></center><hr>
+                <center><div class="col-6 col-sm-4 col-md-3 col-lg-2"><strong>Status:</strong><br>
+                    <?php if ($product->status == 'otvoren') {
+                        echo 'Open';
+                        }
+                        else if ($product->status == 'zaduzen') {
+                            echo 'Assigned';
+                        }
+                        else {
+                            echo 'Closed';
+                        } ?>
+                </div></center><hr>
+                <center><div class="col-6 col-sm-4 col-md-3 col-lg-2"><strong>Technician name:</strong><br>{{ $product->tech }}</div></center><hr>
             </div>
         </div>
     </div>
     <div class="card">
         <div class="card-body" style="margin-left: 10px;">
-            <br>Pozdrav,<br>
+            <br>Regards,<br>
             {{ Auth::user()->name }}
         </div>
     </div>

@@ -5,11 +5,11 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
             <div class="card" id="stil1">
-                <div class="card-header">Prikaz pojedinog ticketa</div>
+                <div class="card-header">View of individual tickets</div>
             </div>
             <div class="card" id="stil1">
                 <div class="card-body">
-                <a href="{{ route('products.index') }}" class="btn btn-primary">Povratak</a>
+                <a href="{{ route('products.index') }}" class="btn btn-primary">Return</a>
                 </div>
 
             </div>
@@ -21,28 +21,36 @@
                 </div>
                 <hr>
                 <div>
-                <strong>Korisnik:</strong><br>
+                <strong>Customer:</strong><br>
                 {{ $product->person }}
                 </div>
                 <hr>
                 
                 <div>
-                <strong>Naziv ticketa:</strong><br>
+                <strong>Ticket name:</strong><br>
                 {{ $product->name }}
                 </div>
                 <hr>
                 <div>
-                <strong>Opis:</strong><br>
+                <strong>Description:</strong><br>
                 {{ $product->description }}
                 </div>
                 <hr>
                 <div>
                 <strong>Status:</strong><br>
-                {{ $product->status }}
+                <?php if ($product->status == 'otvoren') {
+                    echo 'Open';
+                    }
+                    else if ($product->status == 'zaduzen') {
+                        echo 'Assigned';
+                    }
+                    else {
+                        echo 'Closed';
+                    } ?>
                 </div>
                 <hr>
                 <div>
-                <strong>Tehničar:</strong><br>
+                <strong>Technician:</strong><br>
                 {{ $product->tech }}
                 </div>
                 </div>

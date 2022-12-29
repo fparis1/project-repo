@@ -5,11 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" id="stil1">
-                <div class="card-header">Izmjena ticketa</div>
+                <div class="card-header">Ticket edit</div>
             </div>
             <div class="card" id="stil1">
                 <div class="card-body">
-                <a href="{{ route('products.index') }}" class="btn btn-primary">Povratak</a>
+                <a href="{{ route('products.index') }}" class="btn btn-primary">Return</a>
                 </div>
             </div>
             @if ($errors->any())
@@ -54,7 +54,7 @@
                   </select>
                 @endif
                 </div>
-                <strong>Ime korisnika:</strong>
+                <strong>Customer name:</strong>
                 @if (Auth::user()->type == 'agent')
                 <select class="form-control" name="person">
                         @foreach ($customers as $customer)
@@ -73,7 +73,7 @@
                 @endif
                 </div>
                 <div>
-                <strong>Ime ticketa:</strong>
+                <strong>Ticket name:</strong>
                    @if (Auth::user()->type == 'agent')
                    <input type="text" name="name" value="{{ $product->name }}" placeholder="Naziv ticketa">
                    @else
@@ -81,7 +81,7 @@
                    @endif
                 </div>
                 <div>
-                <strong>Opis:</strong>
+                <strong>Description:</strong>
                 @if (Auth::user()->type == 'agent')
                 <textarea name="description" placeholder="Detail">{{ $product->description }}</textarea>
                 @else
@@ -90,14 +90,14 @@
                 </div>
                 <strong>Status:</strong>
                   <div>
-                        <input type="radio" name="status" value="otvoren" {{$product->status == 'otvoren' ? 'checked' : ''}}><label>Otvoren</label><br>
-                        <input type="radio" name="status" value="zaduzen" {{$product->status == 'zaduzen' ? 'checked' : ''}}> <label>Zadužen</label><br>
-                        <input type="radio" name="status" value="zatvoren" {{$product->status == 'zatvoren' ? 'checked' : ''}}> <label>Zatvoren</label>
+                        <input type="radio" name="status" value="otvoren" {{$product->status == 'otvoren' ? 'checked' : ''}}><label>Open</label><br>
+                        <input type="radio" name="status" value="zaduzen" {{$product->status == 'zaduzen' ? 'checked' : ''}}> <label>In charge</label><br>
+                        <input type="radio" name="status" value="zatvoren" {{$product->status == 'zatvoren' ? 'checked' : ''}}> <label>Closed</label>
                   </div>
                   <div>
                       <br>
                     <div>
-                    <strong>Tehničar:</strong>
+                    <strong>Technician:</strong>
                     @if (Auth::user()->type == 'tech')
                     <select class="form-control" name="tech">
                         @foreach ($users as $user)
@@ -124,7 +124,7 @@
                     @endif
                     </div>
                     <br>
-                    <input type="submit" value="Pošalji" class="btn btn-primary">
+                    <input type="submit" value="Submit" class="btn btn-primary">
 
                 </div>
                 </div>

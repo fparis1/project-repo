@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" id="stil1">
-                <div class="card-header">Glavna stranica</div>
+                <div class="card-header">Main page</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Pozdrav
+                    Hello
                     <strong style="font-size:large;"><?php echo Auth::user()->name; ?></strong>
                 </div>
             </div>

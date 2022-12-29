@@ -5,11 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" id="stil1">
-                <div class="card-header">Izmjena korisnika</div>
+                <div class="card-header">Customer edit</div>
             </div>
             <div class="card" id="stil1">
                 <div class="card-body">
-                <a href="{{ route('customers.index') }}" class="btn btn-primary">Povratak</a>
+                <a href="{{ route('customers.index') }}" class="btn btn-primary">Return</a>
                 </div>
             </div>
             @if ($errors->any())
@@ -28,7 +28,7 @@
                 @csrf
                 @method('PUT')
                 <div>
-                <strong>Ime i Prezime</strong>
+                <strong>Name and Surname</strong>
                     <input type="text" name="name" value="{{ $customer->name }}" placeholder="Ime i Prezime">
                 </div>
                 <div>
@@ -36,12 +36,12 @@
                 <input type="text" name="email" value="{{ $customer->email }}" placeholder="Email">
                 </div>
                 <div>
-                <strong>Broj telefona</strong>
+                <strong>Phone number</strong>
                 <input type="text" name="phone" value="{{ $customer->phone }}" placeholder="+385...">
                 </div>
                   <div>
 
-                    <input type="submit" value="Pošalji" class="btn btn-primary">
+                    <input type="submit" value="Submit" class="btn btn-primary">
 
                 </div>
                 </div>

@@ -42,16 +42,16 @@
                     <?php if(Auth::check()): ?>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ url('/home') }}" id="stil2">
-                  Početna stranica
+                  Main page
                 </a></li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ url('/products') }}" id="stil2">
-                  Svi ticketi
+                  All tickets
                 </a></li>
                 <?php if(Auth::user()->type == 'agent'): ?>
                    <li class="nav-item"> 
                     <a class="nav-link" aria-current="page" href="{{ url('/customers') }}" id="stil2">
-                  Svi korisnici
+                  All users
                 </a></li>
                 <?php endif; ?>
                 <?php endif; ?>
